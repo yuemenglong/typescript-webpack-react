@@ -1,12 +1,18 @@
-import * as React from "react"
+import * as React from 'react';
 
-function HomeClass() {
-    this.render = function () {
-        return <h1>Home</h1>
+interface Props {
+    name: string,
+    times: number,
+}
+
+export class Home extends React.Component<Props, Object> {
+    render() {
+        return (
+            <div>
+                This Is {this.props.name}'s Home
+            </div>
+        );
     }
 }
 
-let Home = React.createClass(new HomeClass());
-
-export = Home
 

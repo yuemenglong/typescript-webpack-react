@@ -1,18 +1,15 @@
 /**
  * Created by Administrator on 2017/8/22.
  */
-import React = require("react");
-import ReactDOM = require("react-dom");
-import {Router, Route, browserHistory, IndexRoute, Link} from "react-router"
-import About = require("./About/index");
-import Home = require("./Home/index");
+import * as React from "react"
+import * as ReactDOM from "react-dom"
+import {browserHistory, Router, Route, IndexRoute, Link} from 'react-router'
+import {Home} from "./Home/index";
+import {About} from "./About/index";
+import "./style.less";
 
-function AppClass() {
-    this.getInitialState = function () {
-        return {}
-    };
-
-    this.render = function () {
+class App extends React.Component {
+    render() {
         return <div>
             <Link to="/">home</Link>
             <Link to="/about">about</Link>
@@ -20,8 +17,6 @@ function AppClass() {
         </div>
     }
 }
-
-let App = React.createClass(new AppClass());
 
 let router = <Router history={browserHistory}>
     <Route path="/" component={App}>

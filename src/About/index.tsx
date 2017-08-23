@@ -1,12 +1,10 @@
 import * as React from "react"
 
-function AboutClass() {
-    this.render = function () {
-        return <h1>About</h1>
+export class About extends React.Component {
+    render() {
+        return <div>
+            <h1>About</h1>
+        </div>
     }
 }
-
-let About = React.createClass(new AboutClass());
-
-export = About
 
