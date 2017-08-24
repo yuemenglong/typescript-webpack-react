@@ -7,13 +7,14 @@ import {browserHistory, Router, Route, IndexRoute, Link} from 'react-router'
 import {Home} from "./Home/index";
 import {About} from "./About/index";
 import "./style.less";
-import {App} from "./app";
 
-let router = <Router history={browserHistory}>
-    <Route path="/" component={App}>
-        <IndexRoute component={Home}/>
-        <Route path="/about" component={About}/>
-    </Route>
-</Router>;
+export class App extends React.Component {
+    render() {
+        return <div>
+            <Link to="/">home</Link>
+            <Link to="/about">about</Link>
+            {this.props.children}
+        </div>
+    }
+}
 
-ReactDOM.render(router, document.getElementById("container"));

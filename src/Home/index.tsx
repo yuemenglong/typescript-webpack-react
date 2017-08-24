@@ -1,15 +1,21 @@
 import * as React from 'react';
 
 interface Props {
-    name: string,
-    times: number,
+    location: Location,
 }
 
-export class Home extends React.Component<Props, Object> {
+interface State {
+    name: string,
+}
+
+export class Home extends React.Component<Props, State> {
+
+    state = {name: this.props.location.pathname};
+
     render() {
         return (
             <div>
-                This Is {this.props.name}'s Home
+                This Is {this.state.name}'s Home
             </div>
         );
     }
